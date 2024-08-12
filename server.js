@@ -15,12 +15,12 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
-// app.use(cors(corsOptions));
-// app.use("/api", require("./routes"));
+app.use(cors(corsOptions));
+app.use("/api", require("./routes"));
 
-// app.use("*", (req, res) => {
-//   res.status(404).json({ message: "path not found" });
-// });
+app.use("*", (req, res) => {
+  res.status(404).json({ message: "path not found" });
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on port: http://localhost:${PORT}`);

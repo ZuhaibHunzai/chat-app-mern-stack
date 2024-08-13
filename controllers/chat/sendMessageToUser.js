@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
       sender,
       recipient,
       message,
-      chatRoom: chatRoom || null, // Use the provided chatRoom or set to null
+      chatRoom: chatRoom || null,
     });
 
     // Optionally emit the message to the recipient via Socket.IO

@@ -2,5 +2,7 @@ const indexRouter = require("express").Router();
 
 // auth routes
 indexRouter.use("/auth", require("./auth"));
+// messages router
+indexRouter.use("/chat", require("./messages"));
 
 module.exports = indexRouter;

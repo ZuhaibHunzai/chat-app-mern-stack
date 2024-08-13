@@ -1,7 +1,11 @@
+import { Toaster } from "react-hot-toast";
+import Routers from "./routers/routers";
+
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-5xl text-center">Hellooooo</h1>
+    <div className="">
+      <Toaster />
+      <Routers />
     </div>
   );
 }

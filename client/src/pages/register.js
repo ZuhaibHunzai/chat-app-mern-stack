@@ -65,6 +65,7 @@ function Register(props) {
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col gap-4 bg-white shadow-md rounded p-8">
+            <h2 className="text-3xl font-bold mb-4 text-gray-800">Register</h2>
             <input
               placeholder="Full Name"
               name="name"

@@ -2,6 +2,6 @@ export const authConfig = {
   meEndPoint: "/auth/me",
   loginEndPoint: "/auth/login",
   registerEndpoint: "/auth/register",
-  storageTokenKeyName: "auth-token",
+  storageTokenKeyName: "chatApp-token",
   onTokenExpiration: "refreshToken",
 };

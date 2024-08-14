@@ -1,4 +1,6 @@
+import Inbox from "../components/inbox";
 import { useAuth } from "../hooks/useAuth";
+import { PageLayout } from "../layout/pageLayout";
 
 export default function Home() {
   const user = useAuth();
@@ -9,12 +11,8 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <h1>Home Page</h1>
-      {user?.user._id && (
-        <button onClick={handleLogout}>Logout {user?.user.username}</button>
-      )}
-      <button></button>
-    </div>
+    <PageLayout>
+      <Inbox />
+    </PageLayout>
   );
 }

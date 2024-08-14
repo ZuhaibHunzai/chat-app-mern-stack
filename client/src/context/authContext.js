@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { authConfig } from "../configs/auth";
-import { axiosClient } from "../configs/axiosClient";
+import { axiosClient } from "../configs/axios";
 
 const provider = {
   user: null,
@@ -31,7 +31,7 @@ const AuthProvider = ({ children }) => {
       if (storedToken) {
         setLoading(true);
         await axiosClient
-          .get(authConfig.meEndpoint, {
+          .get(authConfig.meEndPoint, {
             headers: {
               Authorization: storedToken,
             },
@@ -74,6 +74,7 @@ const AuthProvider = ({ children }) => {
 
         const queryParams = new URLSearchParams(location.search);
         const returnUrl = queryParams.get("returnUrl");
+        console.log(response.data.userData, "userData");
         setUser({ ...response.data.userData });
         if (params.rememberMe)
           localStorage.setItem(
@@ -93,7 +94,7 @@ const AuthProvider = ({ children }) => {
     axiosClient
       .post(authConfig.registerEndpoint, params)
       .then(() => {
-        navigate("/login");
+        navigate("/register");
         if (successCallback) successCallback();
       })
       .catch((err) => {

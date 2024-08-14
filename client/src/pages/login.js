@@ -83,10 +83,10 @@ export default function Login() {
           >
             Login
           </button>
-          <p className="text-center">or</p>
+          <p className="text-center p-2">or</p>
           <Link
             to="/register"
-            className="text-center block bg-gray-800 text-white py-2 px-4 rounded-md w-full mt-4"
+            className="text-center block bg-gray-800 text-white py-2 px-4 rounded-md w-full"
           >
             REGISTER
           </Link>

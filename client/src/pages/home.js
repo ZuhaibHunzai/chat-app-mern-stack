@@ -1,4 +1,4 @@
-import Inbox from "../components/inbox";
+import Chats from "../components/inbox/";
 import { useAuth } from "../hooks/useAuth";
 import { PageLayout } from "../layout/pageLayout";
 
@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <PageLayout>
-      <Inbox />
+      <Chats />
     </PageLayout>
   );
 }

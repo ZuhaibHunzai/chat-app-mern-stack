@@ -12,7 +12,9 @@ export default function Header() {
     <PageLayout>
       <div className="flex items-center justify-between h-24">
         <div>
-          <h1 className="text-3xl font-bold">ChitChat</h1>
+          <h1 className="text-3xl font-bold text-yellow-300">
+            Chit<span className="text-yellow-500">Chat</span>
+          </h1>
         </div>
         <div className="flex items-center gap-4">
           {user?.user?.profilePic && (

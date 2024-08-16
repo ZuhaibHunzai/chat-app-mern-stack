@@ -1,4 +1,5 @@
 import { useAuth } from "../hooks/useAuth";
+import { MdOutlinePersonAddAlt } from "react-icons/md";
 
 export default function Chats() {
   const user = useAuth();
@@ -45,10 +46,10 @@ export default function Chats() {
     },
   ];
   return (
-    <div className="flex flex-col  ">
-      <div className="flex justify-between items-center  p-2 ">
+    <div className="flex flex-col ">
+      <div className="flex justify-between items-center  p-4 rounded-t-2xl">
         <div
-          className="flex items-center gap-3 w-2/6
+          className="flex items-center gap-3  
         "
         >
           <div>
@@ -67,15 +68,11 @@ export default function Chats() {
             </div>
           </div>
         </div>
-        <div className="w-4/6">
-          <input
-            type="text"
-            placeholder="search a friend"
-            className="h-10 bg-[#F5F6FA] rounded-full w-full pl-2 outline-none"
-          />
+        <div className=" ">
+          <MdOutlinePersonAddAlt className="h-8 w-8 font-semibold" />
         </div>
       </div>
-      <div className="flex flex-col gap-2 bg-white p-2 rounded-xl">
+      <div className="flex flex-col gap-2 bg-white p-4 rounded-b-2xl">
         <div className="py-4">
           <input
             type="text"

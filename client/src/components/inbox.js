@@ -3,7 +3,7 @@ import Chats from "./chats";
 export default function Inbox() {
   return (
     <div className="flex justify-between min-h-screen">
-      <div className="w-2/6">
+      <div className="w-2/6 ">
         <Chats />
       </div>
       <div>

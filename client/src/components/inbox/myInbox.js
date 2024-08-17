@@ -3,7 +3,7 @@ import { useAuth } from "../../hooks/useAuth";
 import MyChats from "./myChats";
 import { useState } from "react";
 
-export default function Chats() {
+export default function Chats({ inboxUsers }) {
   const user = useAuth();
   const [search, setSearch] = useState(false);
 
@@ -41,7 +41,7 @@ export default function Chats() {
         </div>
       </div>
       {!search ? (
-        <MyChats />
+        <MyChats inboxUsers={inboxUsers} />
       ) : (
         <div className="flex flex-col gap-2 p-4">
           <input

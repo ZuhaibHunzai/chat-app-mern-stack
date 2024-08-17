@@ -7,7 +7,7 @@ import { getInboxUsers } from "../../redux/inbox/action";
 export default function Inbox() {
   const dispatch = useDispatch();
   const inbox = useSelector((state) => state);
-  const inboxUsers = inbox.users?.users?.users;
+  const inboxUsers = inbox?.users?.users?.users;
   useEffect(() => {
     dispatch(getInboxUsers());
   }, [dispatch]);

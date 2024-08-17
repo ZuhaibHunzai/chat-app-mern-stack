@@ -17,20 +17,28 @@ export default function MyChats({ inboxUsers }) {
             <div className="w-full flex gap-2 items-center ">
               <div>
                 <img
-                  src={inboxUsers.profilePic}
-                  alt={inboxUsers?.username}
+                  src={inboxUsers.user.profilePic}
+                  alt={inboxUsers?.user.username}
                   className="w-10 h-10 rounded-full "
                 />
               </div>
               <div className="flex flex-col  ">
-                <h2 className="text-lg font-semibold ">{inboxUsers?.name}</h2>
-                <h2 className="text-slate-500">{inboxUsers?.username}</h2>
+                <h2 className="text-lg font-semibold ">
+                  {inboxUsers?.user?.name}
+                </h2>
+                <h2 className="text-slate-500">
+                  {inboxUsers?.lastMessage?.message}
+                </h2>
               </div>
             </div>
-            {/* <div className="flex flex-col justify-center text-center">
-              <p className="text-sm text-slate-500 ">{chat.latestTextTime}</p>
-              <p className="text-sm font-bold rounded-full">{chat.read}</p>
-            </div> */}
+            <div className="flex flex-col justify-center text-center">
+              <p className="text-sm text-slate-500 ">
+                {inboxUsers?.lastMessage.createdAt}
+              </p>
+              <p className="text-sm font-bold rounded-full">
+                {inboxUsers.read}
+              </p>
+            </div>
           </div>
         );
       })}

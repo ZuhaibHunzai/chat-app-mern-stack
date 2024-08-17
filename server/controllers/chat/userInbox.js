@@ -22,16 +22,32 @@ module.exports = async (req, res) => {
       }
     });
 
-    // Step 3: Fetch the usernames/names of these unique users
-    const users = await User.find({
-      _id: { $in: Array.from(uniqueUserIds) },
-    }).select("username name"); // Fetch only the username and name fields
+    // Step 3: Fetch the usernames/names of these unique users along with their last message
+    const usersWithLastMessage = await Promise.all(
+      Array.from(uniqueUserIds).map(async (userId) => {
+        const user = await User.findById(userId).select(
+          "username name profilePic"
+        );
 
-    // Log the users for debugging
-    console.log("Users found:", users);
+        // Find the last message in the conversation between logged-in user and this user
+        const lastMessage = await Message.findOne({
+          $or: [
+            { sender: loggedInUserId, recipient: userId },
+            { sender: userId, recipient: loggedInUserId },
+          ],
+        })
+          .sort({ createdAt: -1 }) // Sort by createdAt in descending order to get the latest message
+          .select("createdAt sender recipient message");
 
-    // Step 4: Return the list of users in the response
-    return res.status(200).json({ users });
+        return {
+          user,
+          lastMessage,
+        };
+      })
+    );
+
+    // Step 4: Return the list of users with their last message in the response
+    return res.status(200).json({ users: usersWithLastMessage });
   } catch (error) {
     console.error("Error fetching inbox:", error);
     return res.status(500).json({ message: "Internal server error" });

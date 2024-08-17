@@ -70,7 +70,7 @@ export default function MyChats() {
               </div>
             </div>
             <div className="flex flex-col justify-center text-center">
-              <p className="text-sm text-slate-500">{chat.latestTextTime}</p>
+              <p className="text-sm text-slate-500 ">{chat.latestTextTime}</p>
               <p className="text-sm font-bold rounded-full">{chat.read}</p>
             </div>
           </div>

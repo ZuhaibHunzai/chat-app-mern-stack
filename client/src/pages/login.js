@@ -40,13 +40,13 @@ export default function Login() {
     <section>
       <form className="mt-28 w-full max-w-md m-auto" onSubmit={handleSubmit}>
         <div className="bg-white shadow-md rounded p-8">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">Login</h2>
+          <h2 className="text-3xl font-bold mb-4 text-yellow-500">Login</h2>
           <div className="mb-4">
             <input
               name="email"
               placeholder="Email"
               type="email"
-              className="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:border-yellow-500"
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -56,7 +56,7 @@ export default function Login() {
               name="password"
               placeholder="Password"
               type="password"
-              className="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:border-yellow-500"
               onBlur={handleBlur}
               onChange={handleChange}
             />
@@ -79,7 +79,7 @@ export default function Login() {
           </div>
           <button
             type="submit"
-            className="bg-blue-500 block text-white py-2 px-4 rounded-md w-full mt-4 h-10"
+            className="bg-yellow-500 block text-white py-2 px-4 rounded-md w-full mt-4 h-10"
           >
             Login
           </button>

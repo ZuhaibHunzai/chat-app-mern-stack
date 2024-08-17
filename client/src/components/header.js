@@ -3,7 +3,6 @@ import { PageLayout } from "../layout/pageLayout";
 
 export default function Header() {
   const user = useAuth();
-  console.log(user?.user, "user data");
 
   const handleLogout = () => {
     user.logout();

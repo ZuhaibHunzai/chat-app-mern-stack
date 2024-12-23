@@ -3,9 +3,7 @@ import React, { useState } from "react";
 export default function MyChats({ inboxUsers }) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Filter inboxUsers based on the search term
   const filteredUsers = inboxUsers?.filter((user) => {
-    // Convert both the user's name and the searchTerm to lowercase for case-insensitive matching
     return user?.user?.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
@@ -16,8 +14,8 @@ export default function MyChats({ inboxUsers }) {
           type="text"
           placeholder="search chat"
           className="w-full bg-[#F5F6FA] rounded-full h-10 pl-3 outline-none "
-          value={searchTerm} // Bind the value of the input to the searchTerm state
-          onChange={(e) => setSearchTerm(e.target.value)} // Update searchTerm state on input change
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
       {filteredUsers?.length > 0 ? (

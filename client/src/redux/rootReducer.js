@@ -1,6 +1,8 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import usersSlicer from "../redux/test/slicer";
+import inboxSlicer from "../redux/inbox/slicer";
+import sendMessageSlicer from "../redux/sendMessage/sendMessage.slicer";
 const rootReducer = combineReducers({
-  users: usersSlicer,
+  users: inboxSlicer,
+  sendMessage: sendMessageSlicer,
 });
 export default rootReducer;

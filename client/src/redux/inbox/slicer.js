@@ -1,25 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUsers } from "./action";
+import { getInboxUsers } from "./action";
 
 const initialState = {
   status: "",
   users: [],
 };
-const usersSlicer = createSlice({
+const inboxSlicer = createSlice({
   name: "userslice",
   initialState,
   extraReducers: (builder) => {
-    builder.addCase(getUsers.pending, (state) => {
+    builder.addCase(getInboxUsers.pending, (state) => {
       state.status = "pending";
     });
-    builder.addCase(getUsers.fulfilled, (state, action) => {
+    builder.addCase(getInboxUsers.fulfilled, (state, action) => {
       state.status = "fulfilled";
       state.users = action.payload;
     });
-    builder.addCase(getUsers.rejected, (state) => {
+    builder.addCase(getInboxUsers.rejected, (state) => {
       state.status = "rejected";
     });
   },
 });
 
-export default usersSlicer.reducer;
+export default inboxSlicer.reducer;

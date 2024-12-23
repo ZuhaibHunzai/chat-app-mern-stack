@@ -65,12 +65,14 @@ function Register(props) {
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col gap-4 bg-white shadow-md rounded p-8">
-            <h2 className="text-3xl font-bold mb-4 text-gray-800">Register</h2>
+            <h2 className="text-3xl font-bold mb-4 text-yellow-500">
+              Register
+            </h2>
             <input
               placeholder="Full Name"
               name="name"
               type="text"
-              className="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500 text-black"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:border-yellow-500 text-black"
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.name}
@@ -79,7 +81,7 @@ function Register(props) {
               placeholder="username"
               name="username"
               type="text"
-              className="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500 text-black"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:border-yellow-500 text-black"
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.username}
@@ -88,7 +90,7 @@ function Register(props) {
               placeholder="Email Address"
               name="email"
               type="email"
-              className="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500 text-black"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:border-yellow-500 text-black"
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.email}
@@ -97,7 +99,7 @@ function Register(props) {
               placeholder="Password"
               name="password"
               type="password"
-              className="w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500 text-black"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:border-yellow-500 text-black"
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.password}
@@ -105,7 +107,7 @@ function Register(props) {
             <div className="w-full mt-8">
               <button
                 type="submit"
-                className="bg-blue-500 text-white py-2 px-4 rounded-md w-full h-10"
+                className="bg-yellow-500 text-white py-2 px-4 rounded-md w-full h-10"
               >
                 Register
               </button>
@@ -114,7 +116,7 @@ function Register(props) {
               <p>
                 Already have an account?{" "}
                 <span>
-                  <Link to="/login" className="text-blue-400">
+                  <Link to="/login" className="text-yellow-400">
                     Login
                   </Link>
                 </span>

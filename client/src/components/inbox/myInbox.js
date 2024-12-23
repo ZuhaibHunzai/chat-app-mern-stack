@@ -29,13 +29,13 @@ export default function Chats({ inboxUsers }) {
               <h2 className="text-xl font-semibold">{user?.user?.name}</h2>
             </div>
             <div>
-              <h2 className="text-sm">@{user?.user?.username}</h2>
+              <h2 className="text-sm font-semibold">@{user?.user?.username}</h2>
             </div>
           </div>
         </div>
         <div className=" ">
           <MdOutlinePersonAddAlt
-            className="h-8 w-8 font-semibold cursor-pointer"
+            className="h-7 w-7 cursor-pointer"
             onClick={handleSearch}
           />
         </div>

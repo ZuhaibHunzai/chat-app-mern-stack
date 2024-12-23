@@ -9,7 +9,7 @@ import ProtectedRoute from "../utils/protectedRoute";
 export default function Routers() {
   return (
     <Router>
-      <AuthProvider>
+      {/* <AuthProvider>
         <Routes>
           <Route
             path="/*"
@@ -21,12 +21,14 @@ export default function Routers() {
                 </Routes>
               </ProtectedRoute>
             }
-          />
-
-          <Route path="/login" Component={Login} />
-          <Route path="/register" Component={Register} />
-        </Routes>
-      </AuthProvider>
+          /> */}
+      <Header />
+      <Routes>
+        <Route path="/" Component={Home} />
+        <Route path="/login" Component={Login} />
+        <Route path="/register" Component={Register} />
+      </Routes>
+      {/* </AuthProvider> */}
     </Router>
   );
 }

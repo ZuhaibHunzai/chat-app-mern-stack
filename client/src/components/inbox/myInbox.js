@@ -29,7 +29,7 @@ export default function Chats({ inboxUsers }) {
               <h2 className="text-xl font-semibold">{user?.user?.name}</h2>
             </div>
             <div>
-              <h2 className="text-sm font-semibold">@{user?.user?.username}</h2>
+              <h2 className="text-sm">@{user?.user?.username}</h2>
             </div>
           </div>
         </div>
